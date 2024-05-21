@@ -10,6 +10,7 @@ As instruções para executar o exercício estão disponíveis no LMS das aulas.
 Abaixo estão as instruções para ambiente linux.
 
 1. Criação e ativação de um ambiente virtual
+
 No seu terminal de preferência, execute o comando abaixo para criar um ambiente
 virtual.
 ```
@@ -21,12 +22,14 @@ Ative o ambiente virtual.
 source env/bin/activate
 ```
 2. Instale as dependências necessárias para execução do código.
+
 Com o seu ambiente virtual ativado, instale as dependências com o comando abaixo.
 ```
 python -m pip install -r requirements.txt
 ```
 
 3. Rodando as demonstrações
+
 Para executar a demonstração do agente vacumm\_cleaner:
 ```
 cd vacumm_cleaner
@@ -40,6 +43,7 @@ python main.py
 ```
 
 4. Teste sua implementação do exercício
+
 Para resolver o exercício proposto em sala de aula, você deve modificar o 
 arquivo `labirinto/exercise.py`.
 Após implementar sua solução, você pode executar o agente com o seguinte
