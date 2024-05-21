@@ -49,5 +49,5 @@ arquivo `labirinto/exercise.py`.
 Após implementar sua solução, você pode executar o agente com o seguinte
 comando (assumindo que já está na pasta labirinto):
 ```
-python exercice.py
+python exercise.py
 ```
