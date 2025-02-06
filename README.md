@@ -1,53 +1,31 @@
-# Agentes Inteligentes
+# Projeto Vacuum Cleaner https://github.com/shgo/agentes_inteligentes?utm_source=chatgpt.com
 
-Esse repositório contém o código base relacionado ao exercício sobre o tópico
-de agentes inteligentes, para a disciplina de Inteligência Artificial e Machine
-Learning, para a PUC Campinas.
+## Padrões de Refatoração Aplicados:
 
-As instruções para executar o exercício estão disponíveis no LMS das aulas.
+### 1. **Composing Methods**:
+   - **Objetivo**: Criar métodos pequenos e específicos para separar diferentes responsabilidades dentro de um método complexo. Isso melhora a legibilidade, reutilização e manutenibilidade do código.
+   - **Implementação**:
+     - O método `act` do agente foi dividido em três métodos: `decide_move_direction`, `move` e `clean`.
+     - **`decide_move_direction`**: Define a direção para o movimento do agente.
+     - **`move`**: Executa o movimento do agente com base na estratégia escolhida.
+     - **`clean`**: Verifica se o agente está em uma posição suja e realiza a limpeza, se necessário.
 
-## Utilização
-Abaixo estão as instruções para ambiente linux.
+### 2. **Simplifying Conditional Expressions**:
+   - **Objetivo**: Simplificar as expressões condicionais complexas, tornando o código mais legível e fácil de modificar.
+   - **Implementação**:
+     - A lógica de movimentação foi simplificada no método `decide_move_direction`, que agora determina de maneira mais clara se o agente deve mover para a esquerda ou para a direita.
+     - A verificação de se o ambiente está limpo foi simplificada no ambiente com o método `is_clean`, removendo a necessidade de verificações diretas no código principal.
 
-1. Criação e ativação de um ambiente virtual
+### 3. **Simplifying Method Calls**:
+   - **Objetivo**: Tornar a chamada dos métodos mais simples e compreensíveis.
+   - **Implementação**:
+     - O método `act` agora encapsula a lógica do agente em chamadas claras para `decide_move_direction`, `move` e `clean`, o que torna o código principal mais limpo e a execução mais intuitiva.
 
-No seu terminal de preferência, execute o comando abaixo para criar um ambiente
-virtual.
-```
-python -m venv env
+## Exemplo de Execução:
 
-```
-Ative o ambiente virtual.
-```
-source env/bin/activate
-```
-2. Instale as dependências necessárias para execução do código.
-
-Com o seu ambiente virtual ativado, instale as dependências com o comando abaixo.
-```
-python -m pip install -r requirements.txt
-```
-
-3. Rodando as demonstrações
-
-Para executar a demonstração do agente vacumm\_cleaner:
-```
-cd vacumm_cleaner
-python main.py
-```
-
-Para executar a demonstração do agente no labirinto:
-```
-cd labirinto
-python main.py
-```
-
-4. Teste sua implementação do exercício
-
-Para resolver o exercício proposto em sala de aula, você deve modificar o 
-arquivo `labirinto/exercise.py`.
-Após implementar sua solução, você pode executar o agente com o seguinte
-comando (assumindo que já está na pasta labirinto):
-```
-python exercise.py
+```bash
+['0', '0', '0', '1', '0', '1', '1', '0', '0', '0']
+['-', '-', '-', '-', '-', '-', '-', '-', '-', 'X']
+MOVENDO PARA A DIREITA
+LIMPANDO O ESPAÇO
 ```

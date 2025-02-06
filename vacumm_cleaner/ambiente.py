@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Environment:
     def __init__(self, n_cols):
         self.room = np.random.randint(low=0, high=2, size=n_cols)
@@ -11,6 +10,9 @@ class Environment:
 
     def render(self):
         print([str(i) for i in self.room])
-        agent_position = ["-" for i in self.room]
+        agent_position = ["-" for _ in self.room]
         agent_position[self.agent_location] = "X"
         print(agent_position)
+
+    def is_clean(self):
+        return sum(self.room) == 0
